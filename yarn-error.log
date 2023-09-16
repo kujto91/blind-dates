@@ -1,0 +1,30 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add esbuild
+
+PATH: 
+  /home/dell/.rbenv/versions/2.7.6/lib/ruby/gems/2.7.0/bin:/home/dell/.rbenv/versions/2.7.6/bin:/home/dell/.rbenv/libexec:/home/dell/.rbenv/plugins/ruby-build/bin:/home/dell/.local/bin:/home/dell/.rbenv/shims:/home/dell/.rbenv/bin:/home/dell/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  14.21.3
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:71:26)
+
+npm manifest: 
+  {
+    "name": "app",
+    "private": "true"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
