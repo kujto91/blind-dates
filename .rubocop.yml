@@ -1,0 +1,79 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+inherit_mode:
+  merge:
+    - Exclude
+
+AllCops:
+  Exclude:
+    - '**/bin/**/*'
+    - '**/db/**/*'
+    - '**/tmp/**/*'
+  NewCops: enable
+  TargetRubyVersion: 2.7.6
+
+Bundler/GemComment:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 210
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Metrics/AbcSize:
+  Exclude:
+    - '**/spec/**/*'
+  Max: 26
+
+Metrics/BlockLength:
+  Exclude:
+    - '**/spec/**/*'
+  Max: 50
+
+Metrics/MethodLength:
+  Max: 25
+
+Metrics/ModuleLength:
+  Max: 250
+
+Metrics/ClassLength:
+  Max: 150
+
+Rails/HttpPositionalArguments:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Style/FormatString:
+  EnforcedStyle: percent
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/OptionalBooleanParameter:
+  Enabled: false
+
+Style/OptionHash:
+  Enabled: true
+
+Rails/I18nLocaleTexts:
+  Enabled: false
