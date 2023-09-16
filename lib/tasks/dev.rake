@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 namespace :dev do
   desc 'setup default development env'
 
