@@ -4,6 +4,7 @@
         <div class="flex h-16 justify-between">
           <div class="flex">
             <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+              <%= link_to 'Departments', departments_path, class: "text-gray-900 inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium" %>
               <%= link_to 'Employees', users_path, class: "text-gray-900 inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium" %>
             </div>
           </div>
@@ -22,6 +23,7 @@
 
       <div class="sm:hidden" id="mobile-menu">
         <div class="space-y-1 pb-3 pt-2">
+          <%= link_to 'Departments', departments_path, class: "text-gray-900 inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium" %>
           <%= link_to 'Employees', users_path, class: "text-gray-900 inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium" %>
         </div>
 
