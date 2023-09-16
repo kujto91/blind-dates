@@ -1,0 +1,35 @@
+<% if current_user.present? %>
+    <nav class="border-b border-gray-200 bg-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 justify-between">
+          <div class="flex">
+            <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+              <%= link_to 'Employees', users_path, class: "text-gray-900 inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium" %>
+            </div>
+          </div>
+
+          <div class="hidden sm:ml-6 sm:flex sm:items-center">
+            <div class="relative ml-3">
+              <%= link_to current_user.email, edit_user_path(current_user), class: "block px-4 py-2 text-sm text-gray-700" %>
+            </div>
+
+            <div class="relative ml-3">
+              <%= button_to 'Sign out', user_session_url(current_user), class: "block px-4 py-2 text-sm text-gray-700", method: :delete %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sm:hidden" id="mobile-menu">
+        <div class="space-y-1 pb-3 pt-2">
+          <%= link_to 'Employees', users_path, class: "text-gray-900 inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium" %>
+        </div>
+
+        <div class="border-t border-gray-200 pb-3 pt-4">
+          <%= link_to current_user.email, edit_user_path(current_user), class: "block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800" %>
+
+          <%= button_to 'Sign out', user_session_url(current_user), class: "block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800", method: :delete %>
+        </div>
+      </div>
+    </nav>
+<% end %>

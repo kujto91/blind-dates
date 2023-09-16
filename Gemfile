@@ -38,7 +38,7 @@ gem 'jbuilder'
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem 'bcrypt', '~> 3.1.7'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mswin mswin64 mingw x64_mingw jruby]
@@ -54,13 +54,13 @@ gem 'tailwindcss-rails'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails'
+  gem 'factory_bot_rails'
+  gem 'forgery'
+  gem 'rspec-rails'
   gem 'rubocop', require: false
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
   gem 'shoulda-matchers'
-  gem 'forgery'
 end
 
 group :development do
@@ -71,8 +71,8 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  gem 'spring'
   gem 'annotate'
+  gem 'spring'
 end
 
 group :test do

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full">
   <head>
     <title>BlindDates</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -8,10 +8,15 @@
 
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= javascript_include_tag "/javascript/application.js", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body class="h-full">
+    <%= render 'layouts/navigation' %>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </body>
 </html>
