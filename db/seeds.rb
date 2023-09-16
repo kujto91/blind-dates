@@ -29,3 +29,16 @@ employees = departments.map do |department|
     )
   end
 end
+
+puts 'Create restorants'
+restorants = 5.times do
+  Restorant.find_or_create_by!(
+    name: Forgery(:name).company_name,
+    descripton: Forgery('basic').text,
+    phone: Forgery('address').phone,
+    address_street: Forgery('address').street_name,
+    address_number: Forgery('address').street_number,
+    address_postcode: Forgery('address').zip,
+    address_town: Forgery('address').city
+  )
+end
