@@ -22,27 +22,22 @@ rails dev:setup
 ```
 will create `.env` and `config/database.yml` from `.sample` files.
 
-### Run Database Service
+### Build Services
 ```
-docker-compose up -d
+docker-compose up --build
 ```
-will start `postgresql` database as a docker container.
+will start `postgresql` database and `blind_dates` as docker containers
 
 ### Setup Database
 ```
-  rails db:setup
+rails db:setup
 ```
 will setup `development` and `test` databases.
 
-### Run tha Blind Dates App
-in root directory:
-
+### Run Blind Dates App
 ```
-cd blind-dates
-
-foreman start -f Procfile.dev
+docker-compose up -d
 ```
-
 After startup completed, you should be able to sign in as admin through http://localhost:3000 with:
 
 username: test@test.de

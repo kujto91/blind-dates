@@ -1,11 +1,11 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: localhost
-  username: blind_dates
-  password: blind_dates
-  port: 5432
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV.fetch('DB_HOST', 'localhost') %>
+  database: <%= ENV['POSTGRES_DB'] %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
   reconnect: true
 
 development:
