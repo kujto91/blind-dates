@@ -1,24 +1,49 @@
-# README
+# Blind Dates
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Quick Development Setup
 
-Things you may want to cover:
+### Dependencies
+* ruby 2.7.6
+* docker / docker-compose
+* tailwind css
 
-* Ruby version
+### Configuration
+in root directory:
 
-* System dependencies
+```
+cd blind-dates
 
-* Configuration
+bundle install
+```
 
-* Database creation
+### Copy default configs
+```
+rails dev:setup
+```
+will create `.env` and `config/database.yml` from `.sample` files.
 
-* Database initialization
+### Run Database Service
+```
+docker-compose up -d
+```
+will start `postgresql` database as a docker container.
 
-* How to run the test suite
+### Setup Database
+```
+  rails db:setup
+```
+will setup `development` and `test` databases.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Run tha Blind Dates App
+in root directory:
 
-* Deployment instructions
+```
+cd blind-dates
 
-* ...
+foreman start -f Procfile.dev
+```
+
+After startup completed, you should be able to sign in as admin through http://localhost:3000 with:
+
+username: test@test.de
+password: password!
