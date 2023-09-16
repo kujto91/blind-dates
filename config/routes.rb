@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :user_sessions, only: %i[new create destroy]
 
   resources :departments, only: %i[index new create edit update destroy]
+  resources :restorants, only: %i[index new create edit update destroy]
 end
