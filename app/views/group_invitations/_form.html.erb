@@ -1,0 +1,24 @@
+<%= form_with(model: group_invitation, class: "contents") do |form| %>
+  <% if group_invitation.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(group_invitation.errors.count, "error") %> prohibited this group_invitation from being saved:</h2>
+
+      <ul>
+        <% group_invitation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% unless group_invitation.confirmed? %>
+    <div class="my-5">
+      <%= form.label :confirm %>
+      <%= form.check_box :confirm, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2" %>
+    </div>
+  <% end %>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 text-blue-600 inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

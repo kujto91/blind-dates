@@ -1,0 +1,39 @@
+<div class="py-10">
+  <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <h1 class="font-bold text-4xl">Groups</h1>
+        <% if current_user.admin? %>
+          <%= button_to 'Generate New groups', { controller: 'groups', action: 'create' }, method: :post, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+        <% end %>
+
+        <div class="my-5">
+          <%= form_tag groups_path, method: :get do %>
+            <%= text_field_tag :search %>
+            <%= submit_tag 'Search by Week', class: "px-3 text-blue-600" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-10">
+      <table class="min-w-full table-fixed divide-y divide-gray-300">
+        <thead>
+          <tr>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Week Nr</th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Leader</th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Participant</th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Restorant</th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Invitations Nr</th>
+          </tr>
+        </thead>
+
+        <tbody class="divide-y divide-gray-200 bg-white">
+          <% @groups&.each do |group| %>
+            <%= render group %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
