@@ -114,10 +114,17 @@ GEM
     crass (1.0.6)
     cssbundling-rails (1.3.2)
       railties (>= 6.0.0)
+    database_cleaner (2.0.2)
+      database_cleaner-active_record (>= 2, < 3)
+    database_cleaner-active_record (2.1.0)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     date (3.3.3)
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    diff-lcs (1.5.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -125,6 +132,12 @@ GEM
     drb (2.1.1)
       ruby2_keywords
     erubi (1.12.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
+    forgery (0.8.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -198,6 +211,23 @@ GEM
     reline (0.3.8)
       io-console (~> 0.5)
     rexml (3.2.6)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.6)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-rails (6.0.3)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.12)
+      rspec-expectations (~> 3.12)
+      rspec-mocks (~> 3.12)
+      rspec-support (~> 3.12)
+    rspec-support (3.12.1)
     rubocop (1.56.3)
       base64 (~> 0.1.1)
       json (~> 2.3)
@@ -226,6 +256,9 @@ GEM
       rubocop-factory_bot (~> 2.22)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
+    shoulda-matchers (5.3.0)
+      activesupport (>= 5.2.0)
+    spring (4.1.1)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -264,16 +297,22 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   cssbundling-rails
+  database_cleaner
   debug
   dotenv-rails
+  factory_bot_rails
+  forgery
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
   puma (>= 5.0)
   rails!
+  rspec-rails
   rubocop
   rubocop-rails
   rubocop-rspec
+  shoulda-matchers
+  spring
   sprockets-rails
   stimulus-rails
   tailwindcss-rails

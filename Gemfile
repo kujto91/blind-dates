@@ -58,6 +58,10 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
+  gem 'forgery'
 end
 
 group :development do
@@ -68,5 +72,9 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  gem 'spring'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
