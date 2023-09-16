@@ -22,10 +22,8 @@ RSpec.describe User do
       it { is_expected.to validate_presence_of(attribute) }
     end
 
-    context 'belongs_to' do
-      %i[department].each do |attribute|
-        it { is_expected.to belong_to(attribute) }
-      end
+    %i[department].each do |attribute|
+      it { is_expected.to belong_to(attribute) }
     end
   end
 end

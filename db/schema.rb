@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_09_16_102846) do
+ActiveRecord::Schema[7.1].define(version: 2023_09_16_105345) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,25 @@ ActiveRecord::Schema[7.1].define(version: 2023_09_16_102846) do
     t.text "descripton"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "group_invitations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "group_id", null: false
+    t.boolean "leader", default: false
+    t.datetime "confirmed_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_group_invitations_on_group_id"
+    t.index ["user_id"], name: "index_group_invitations_on_user_id"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.bigint "restorant_id"
+    t.integer "week", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restorant_id"], name: "index_groups_on_restorant_id"
   end
 
   create_table "restorants", force: :cascade do |t|
@@ -46,5 +65,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_09_16_102846) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "group_invitations", "groups"
+  add_foreign_key "group_invitations", "users"
+  add_foreign_key "groups", "restorants"
   add_foreign_key "users", "departments"
 end
