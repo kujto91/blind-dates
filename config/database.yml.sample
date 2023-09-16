@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: blind_dates
+  password: blind_dates
+  port: 5432
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  reconnect: true
+
+development:
+  <<: *default
+  database: blind_dates_development
+
+test:
+  <<: *default
+  database: blind_dates_test
