@@ -52,8 +52,7 @@ gem 'bootsnap', require: false
 gem 'tailwindcss-rails'
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'debug', platforms: %i[mri mswin mswin64 mingw x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails'
   gem 'rubocop', require: false
   gem 'rubocop-rails'
