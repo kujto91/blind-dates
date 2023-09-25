@@ -1,6 +1,7 @@
 require:
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-factory_bot
 
 inherit_mode:
   merge:
@@ -76,4 +77,7 @@ Style/OptionHash:
   Enabled: true
 
 Rails/I18nLocaleTexts:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
   Enabled: false

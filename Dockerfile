@@ -9,15 +9,18 @@ RUN apt-get update -qq && \
 
 RUN npm install -g yarn esbuild
 
-RUN mkdir -p /var/www/app
-WORKDIR /var/www/app
+ENV APP_HOME /blind-dates
 
-ADD Gemfile /var/www/app/Gemfile
-ADD Gemfile.lock /var/www/app/Gemfile.lock
-ADD .ruby-version /var/www/app/.ruby-version
+RUN mkdir -p $APP_HOME
+WORKDIR $APP_HOME
+
+ADD Gemfile $APP_HOME/Gemfile
+ADD Gemfile.lock $APP_HOME/Gemfile.lock
+ADD .ruby-version $APP_HOME/.ruby-version
+
 RUN bundle install
 
-ADD . /var/www/app
+ADD . $APP_HOME
 
 RUN bundle exec rake assets:precompile
 

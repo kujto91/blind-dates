@@ -10,6 +10,20 @@ services:
       - .env
     ports:
       - 5432:5432
+  app:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    env_file:
+      - .env
+    volumes:
+      - .:/app:cached
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
 volumes:
   postgres_data:
     driver: local
+networks:
+  default:
+    name: blind_dates_default
